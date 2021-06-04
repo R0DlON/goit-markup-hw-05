@@ -455,8 +455,6 @@ img {
 
 .wwd-list-item {
   position: relative;
-
-  cursor: pointer;
 }
 
 .overlay {
@@ -807,7 +805,7 @@ img {
 }
 
 .text-p {
-  top: 50%;
+  top: 100%;
   left: 50%;
 
   width: 322px;
