@@ -455,15 +455,6 @@ img {
   position: relative;
 }
 
-.overlay {
-  position: absolute;
-
-  width: 100%;
-
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-}
-
 .text-s {
   position: absolute;
 
@@ -480,12 +471,6 @@ img {
   color: var(--white-text-color);
 
   background: rgba(47, 48, 58, 0.8);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.wwd-list-item:hover .overlay.text-s,
-.wwd-list-item:focus .overlay.text-s {
-  opacity: 1;
 }
 
 /* Our Team */
@@ -515,15 +500,11 @@ img {
 .team-box-list {
   display: flex;
   justify-content: center;
-
-  width: 270px;
-  height: 44px;
 }
 .team-box-list-link {
-  display: inline-block;
+  display: flex;
 
-  width: 44px;
-  height: 44px;
+  padding: 12px;
 
   background-color: var(--third-icon-color);
   border-radius: 50%;
@@ -532,9 +513,8 @@ img {
 }
 
 .team-box-list-link > svg {
-  width: 100%;
-  height: 100%;
-  padding: 12px;
+  width: 20px;
+  height: 20px;
 
   fill: var(--first-icon-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -632,7 +612,7 @@ img {
   text-decoration: none;
   color: var(--white-text-color);
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -675,8 +655,8 @@ img {
 
 .footer-i-icon-list-link {
   display: flex;
-  width: 44px;
-  height: 44px;
+
+  padding: 12px;
 
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
@@ -686,11 +666,11 @@ img {
 .footer-i-icon-list-link:hover,
 .footer-i-icon-list-link:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
 }
 
 .footer-i-icon-list-link > svg {
-  padding: 12px;
+  width: 20px;
+  height: 20px;
 
   fill: var(--third-icon-color);
 }
@@ -742,8 +722,6 @@ img {
   background: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 4px;
   border: transparent;
 }
 .filter-list-button.current:hover,
@@ -760,10 +738,11 @@ img {
   text-align: center;
   color: var(--primary-text-color);
 
-  background: var(--third-background-color);
+  background-color: var(--third-background-color);
   border-radius: 4px;
   border: transparent;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   cursor: pointer;
 }
@@ -774,7 +753,6 @@ img {
   background: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 /* Проекты */
@@ -791,7 +769,7 @@ img {
   background: #ffffff;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-list-item:hover,
@@ -800,11 +778,8 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.project-list-item:nth-child(3n) {
-  margin-right: 0px;
-}
-.project-list-item:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 15px;
+.project-list-link {
+  text-decoration: none;
 }
 
 .thumb {
@@ -830,6 +805,15 @@ img {
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.overlay {
+  position: absolute;
+
+  width: 100%;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
 .text-p {
   top: 50%;
   left: 50%;
@@ -845,20 +829,15 @@ img {
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-list-item:hover text.p,
-.project-list-item:focus text.p {
-  opacity: 1;
-}
-
-.project-list-item:hover .thumb:before,
-.project-list-item:focus .thumb:before {
+.project-list-link:hover .thumb:before,
+.project-list-link:focus .thumb:before {
   transform: translateY(0%);
 
   opacity: 1;
 }
 
-.project-list-item:hover .text-p,
-.project-list-item:focus .text-p {
+.project-list-link:hover .text-p,
+.project-list-link:focus .text-p {
   transform: translate(-50%, -50%) translateY(0%);
 
   opacity: 1;
